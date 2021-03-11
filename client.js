@@ -10,10 +10,20 @@ const connect = function() {
   conn.on('data', function(info) {
     console.log(info);
   });
-  conn.on('connect',(client) =>{
+  conn.on('connect',() =>{
     console.log('Successfully connected to game server');
     conn.write("Name: SDP");
   });
+
+  // conn.on('connect',() =>{
+  //   conn.write('Move: up');
+  //   setTimeout(() =>{
+  //     conn.write('Move: left');
+  //   }, 1000)
+  //   setTimeout(() =>{
+  //     conn.write('Move: up');
+  //   }, 2000)
+  // });
   return conn;
 }
 
