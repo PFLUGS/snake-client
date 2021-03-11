@@ -10,6 +10,10 @@ const connect = function() {
   conn.on('data', function(info) {
     console.log(info);
   });
+  conn.on('connect',(client) =>{
+    console.log('Successfully connected to game server');
+    conn.write("Name: SDP");
+  });
   return conn;
 }
 
